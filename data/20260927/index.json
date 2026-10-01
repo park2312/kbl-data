@@ -4,20 +4,23 @@
     "home": "서울 삼성",
     "away": "안양 정관장",
     "start": "1400",
-    "file": "data/20260927/S49G14N8_player-stat.json"
+    "player_stat_file": "data/20260927/S49G14N8_player-stat.json",
+    "text_cast_file": "data/20260927/S49G14N8_text-cast.json"
   },
   {
     "gmkey": "S49G14N9",
     "home": "수원 KT",
     "away": "고양 소노",
     "start": "1400",
-    "file": "data/20260927/S49G14N9_player-stat.json"
+    "player_stat_file": "data/20260927/S49G14N9_player-stat.json",
+    "text_cast_file": "data/20260927/S49G14N9_text-cast.json"
   },
   {
     "gmkey": "S49G14N10",
     "home": "부산 KCC",
     "away": "대구 한국가스공사",
     "start": "1630",
-    "file": "data/20260927/S49G14N10_player-stat.json"
+    "player_stat_file": "data/20260927/S49G14N10_player-stat.json",
+    "text_cast_file": "data/20260927/S49G14N10_text-cast.json"
   }
 ]
