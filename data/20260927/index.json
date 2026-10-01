@@ -19,8 +19,12 @@
       "Q3": "data/20260927/S49G14N8_text-cast_Q3.json",
       "Q4": "data/20260927/S49G14N8_text-cast_Q4.json"
     },
+    "lineup_stints_file": "data/20260927/S49G14N8_lineup-stints.json",
+    "lineup_stint_count": 25,
+    "lineup_issues_file": "data/20260927/S49G14N8_lineup-issues.json",
+    "lineup_issue_count": 0,
     "unknown_events_file": "data/20260927/S49G14N8_unknown-events.json",
-    "unknown_event_count": 1
+    "unknown_event_count": 0
   },
   {
     "gmkey": "S49G14N9",
@@ -42,6 +46,10 @@
       "Q3": "data/20260927/S49G14N9_text-cast_Q3.json",
       "Q4": "data/20260927/S49G14N9_text-cast_Q4.json"
     },
+    "lineup_stints_file": "data/20260927/S49G14N9_lineup-stints.json",
+    "lineup_stint_count": 33,
+    "lineup_issues_file": "data/20260927/S49G14N9_lineup-issues.json",
+    "lineup_issue_count": 0,
     "unknown_events_file": "data/20260927/S49G14N9_unknown-events.json",
     "unknown_event_count": 0
   },
@@ -65,7 +73,11 @@
       "Q3": "data/20260927/S49G14N10_text-cast_Q3.json",
       "Q4": "data/20260927/S49G14N10_text-cast_Q4.json"
     },
+    "lineup_stints_file": "data/20260927/S49G14N10_lineup-stints.json",
+    "lineup_stint_count": 20,
+    "lineup_issues_file": "data/20260927/S49G14N10_lineup-issues.json",
+    "lineup_issue_count": 0,
     "unknown_events_file": "data/20260927/S49G14N10_unknown-events.json",
-    "unknown_event_count": 2
+    "unknown_event_count": 0
   }
 ]
