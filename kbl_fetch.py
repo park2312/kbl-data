@@ -152,6 +152,117 @@ def main():
                 event["event"] = EVENT_NAMES.get(code, "UNKNOWN")
             text_cast_all.extend(text_cast)
 
+        # Reconstruct on-court lineups and lineup-vs-lineup stints from substitutions.
+        # This measures concurrent-player matchup context, NOT direct defensive assignments.
+        scoring = {"201": 2, "203": 1, "205": 3, "207": 2}
+        lineups = {}
+        stint_rows = []
+        lineup_issues = []
+
+        for quarter in ("Q1", "Q2", "Q3", "Q4"):
+            qevents = sorted(
+                [e for e in text_cast_all if e.get("q") == quarter],
+                key=lambda e: int(e.get("n") or 0)
+            )
+            teams = sorted({str(e.get("t")) for e in qevents if e.get("t")})
+            on = {t: set() for t in teams}
+
+            # KBL logs starters as IN at 10:00. Apply all same-clock substitutions
+            # before opening a stint so the first valid 5v5 state is captured.
+            active = None
+            stint_start = None
+            stint_events = []
+
+            def clock_seconds(e):
+                return int(e.get("m") or 0) * 60 + int(e.get("s") or 0)
+
+            def snapshot():
+                return {t: tuple(sorted(on[t])) for t in teams}
+
+            def valid_five(state):
+                return len(teams) == 2 and all(len(state.get(t, ())) == 5 for t in teams)
+
+            def close_stint(end_event):
+                nonlocal active, stint_start, stint_events
+                if not active or not stint_start:
+                    return
+                team_pts = {t: 0 for t in teams}
+                team_tov = {t: 0 for t in teams}
+                team_oreb = {t: 0 for t in teams}
+                team_ast = {t: 0 for t in teams}
+                for ev in stint_events:
+                    t = str(ev.get("t") or "")
+                    code = str(ev.get("a") or "")
+                    if t in team_pts:
+                        team_pts[t] += scoring.get(code, 0)
+                        team_tov[t] += 1 if code in {"214", "223"} else 0
+                        team_oreb[t] += 1 if code == "209" else 0
+                        team_ast[t] += 1 if code == "211" else 0
+                stint_rows.append({
+                    "q": quarter,
+                    "start_m": stint_start.get("m"), "start_s": stint_start.get("s"),
+                    "end_m": end_event.get("m"), "end_s": end_event.get("s"),
+                    "start_n": stint_start.get("n"), "end_n": end_event.get("n"),
+                    "lineups": {t: list(active[t]) for t in teams},
+                    "points": team_pts,
+                    "turnovers": team_tov,
+                    "off_rebounds": team_oreb,
+                    "assists": team_ast,
+                })
+
+            i = 0
+            while i < len(qevents):
+                e = qevents[i]
+                same_clock = [e]
+                j = i + 1
+                while j < len(qevents) and clock_seconds(qevents[j]) == clock_seconds(e):
+                    same_clock.append(qevents[j]); j += 1
+
+                has_sub = any(str(x.get("a")) in {"101", "102"} for x in same_clock)
+                if has_sub and active:
+                    close_stint(e)
+                    active = None
+                    stint_start = None
+                    stint_events = []
+
+                for x in same_clock:
+                    code = str(x.get("a") or "")
+                    t = str(x.get("t") or "")
+                    p = x.get("p")
+                    if t not in on or not p:
+                        continue
+                    if code == "101":
+                        on[t].add(p)
+                    elif code == "102":
+                        on[t].discard(p)
+
+                state = snapshot()
+                if has_sub:
+                    if valid_five(state):
+                        active = state
+                        stint_start = e
+                    elif any(len(state.get(t, ())) not in {0, 5} for t in teams):
+                        lineup_issues.append({
+                            "q": quarter, "m": e.get("m"), "s": e.get("s"), "n": e.get("n"),
+                            "lineup_sizes": {t: len(state.get(t, ())) for t in teams},
+                            "lineups": {t: list(state.get(t, ())) for t in teams},
+                        })
+
+                if active:
+                    stint_events.extend([x for x in same_clock if str(x.get("a")) not in {"101", "102"}])
+                i = j
+
+            if active and qevents:
+                close_stint(qevents[-1])
+
+        stints_out = f"{folder}/{gmkey}_lineup-stints.json"
+        with open(stints_out, "w", encoding="utf-8") as f:
+            json.dump(stint_rows, f, ensure_ascii=False, indent=2)
+
+        lineup_issues_out = f"{folder}/{gmkey}_lineup-issues.json"
+        with open(lineup_issues_out, "w", encoding="utf-8") as f:
+            json.dump(lineup_issues, f, ensure_ascii=False, indent=2)
+
         # Join field-goal PBP events to shootLog in player/quarter order.
         # KBL shootLog does not include game clock, so the safest deterministic key
         # is player + quarter + chronological attempt order. Validate counts and
@@ -239,6 +350,10 @@ def main():
             "shot_merge_issue_count": len(shot_merge_issues),
             "text_cast_file": text_cast_out,
             "text_cast_quarter_files": text_cast_files,
+            "lineup_stints_file": stints_out,
+            "lineup_stint_count": len(stint_rows),
+            "lineup_issues_file": lineup_issues_out,
+            "lineup_issue_count": len(lineup_issues),
             "unknown_events_file": unknown_out,
             "unknown_event_count": len(unknown_events),
         })
