@@ -151,6 +151,68 @@ def main():
                 event["event"] = EVENT_NAMES.get(code, "UNKNOWN")
             text_cast_all.extend(text_cast)
 
+        # Join field-goal PBP events to shootLog in player/quarter order.
+        # KBL shootLog does not include game clock, so the safest deterministic key
+        # is player + quarter + chronological attempt order. Validate counts and
+        # never silently force a match when the two official feeds disagree.
+        fg_codes = {"201", "202", "205", "206", "207"}
+        pbp_shots = {}
+        for event in text_cast_all:
+            code = str(event.get("a", ""))
+            if code not in fg_codes:
+                continue
+            key = (str(event.get("t", "")), event.get("p") or event.get("e") or "", event.get("q"))
+            pbp_shots.setdefault(key, []).append(event)
+
+        chart_shots = {}
+        for shot in shot_log:
+            key = (str(shot.get("tcode", "")), shot.get("pname") or shot.get("ename") or "", shot.get("q"))
+            chart_shots.setdefault(key, []).append(shot)
+
+        merged_shots = []
+        shot_merge_issues = []
+        all_shot_keys = set(pbp_shots) | set(chart_shots)
+        for key in sorted(all_shot_keys, key=lambda x: (x[2] or "", x[0], x[1])):
+            events = pbp_shots.get(key, [])
+            coords = chart_shots.get(key, [])
+            if len(events) != len(coords):
+                shot_merge_issues.append({
+                    "tcode": key[0],
+                    "pname": key[1],
+                    "q": key[2],
+                    "pbp_attempts": len(events),
+                    "chart_attempts": len(coords),
+                })
+                continue
+
+            for event, shot in zip(events, coords):
+                code = str(event.get("a", ""))
+                merged_shots.append({
+                    "n": event.get("n"),
+                    "q": event.get("q"),
+                    "m": event.get("m"),
+                    "s": event.get("s"),
+                    "tcode": event.get("t"),
+                    "pcode": shot.get("pcode"),
+                    "pname": shot.get("pname"),
+                    "ename": shot.get("ename"),
+                    "event_code": code,
+                    "event": EVENT_NAMES.get(code, "UNKNOWN"),
+                    "shot_value": 3 if code in {"205", "206"} else 2,
+                    "made": code in {"201", "205", "207"},
+                    "x": shot.get("x"),
+                    "y": shot.get("y"),
+                    "direction": shot.get("direction"),
+                })
+
+        merged_shots_out = f"{folder}/{gmkey}_shots-merged.json"
+        with open(merged_shots_out, "w", encoding="utf-8") as f:
+            json.dump(merged_shots, f, ensure_ascii=False, indent=2)
+
+        shot_merge_issues_out = f"{folder}/{gmkey}_shot-merge-issues.json"
+        with open(shot_merge_issues_out, "w", encoding="utf-8") as f:
+            json.dump(shot_merge_issues, f, ensure_ascii=False, indent=2)
+
         # Keep a compact report of any event codes we have not decoded yet.
         unknown_events = [event for event in text_cast_all if event.get("event") == "UNKNOWN"]
         unknown_out = f"{folder}/{gmkey}_unknown-events.json"
@@ -170,6 +232,10 @@ def main():
             "match_chart_file": match_chart_out,
             "shot_log_file": shot_log_out,
             "shot_attempt_count": len(shot_log),
+            "merged_shots_file": merged_shots_out,
+            "merged_shot_count": len(merged_shots),
+            "shot_merge_issues_file": shot_merge_issues_out,
+            "shot_merge_issue_count": len(shot_merge_issues),
             "text_cast_file": text_cast_out,
             "text_cast_quarter_files": text_cast_files,
             "unknown_events_file": unknown_out,
