@@ -1,0 +1,35 @@
+name: KBL Fetch
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "KBL game date (YYYYMMDD)"
+        required: true
+        default: "20260927"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch official KBL data
+        env:
+          KBL_DATE: ${{ inputs.date }}
+        run: python3 kbl_fetch.py
+
+      - name: Commit collected data
+        run: |
+          git config user.name "kbl-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Fetch KBL data ${{ inputs.date }}"
+            git push
+          fi
