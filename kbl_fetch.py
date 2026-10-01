@@ -21,34 +21,74 @@ def get_json(url):
     with urllib.request.urlopen(req, timeout=30) as res:
         return json.load(res)
 
-def scalar_at(v, i):
-    return v[i] if isinstance(v, list) else v
+def normalize_matches(raw):
+    # KBL may return either:
+    # 1) a JSON array of game objects, or
+    # 2) one object whose fields are arrays.
+    if isinstance(raw, list):
+        return [x for x in raw if isinstance(x, dict)]
 
-def main():
-    date = os.environ.get("KBL_DATE") or (sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y%m%d"))
-    url = f"{BASE}/match/list?fromDate={date}&toDate={date}&tcodeList=all"
-    raw = get_json(url)
+    if not isinstance(raw, dict):
+        raise TypeError(f"Unexpected match-list JSON type: {type(raw).__name__}")
+
     gmkeys = raw.get("gmkey", [])
     if not isinstance(gmkeys, list):
         gmkeys = [gmkeys]
-    os.makedirs(f"data/{date}", exist_ok=True)
-    with open(f"data/{date}/match-list.json", "w", encoding="utf-8") as f:
-        json.dump(raw, f, ensure_ascii=False, indent=2)
-    index = []
+
+    games = []
     for i, gmkey in enumerate(gmkeys):
+        def at(key, default=""):
+            value = raw.get(key, default)
+            if isinstance(value, list):
+                return value[i] if i < len(value) else default
+            return value
+        games.append({
+            "gmkey": gmkey,
+            "tnameH": at("tnameH"),
+            "tnameA": at("tnameA"),
+            "gameStart": at("gameStart"),
+            "gameDate": at("gameDate"),
+        })
+    return games
+
+def main():
+    date = os.environ.get("KBL_DATE") or (sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y%m%d"))
+    raw = get_json(f"{BASE}/match/list?fromDate={date}&toDate={date}&tcodeList=all")
+    games = normalize_matches(raw)
+
+    folder = f"data/{date}"
+    os.makedirs(folder, exist_ok=True)
+
+    with open(f"{folder}/match-list.json", "w", encoding="utf-8") as f:
+        json.dump(raw, f, ensure_ascii=False, indent=2)
+
+    index = []
+    for game in games:
+        gmkey = game.get("gmkey")
         if not gmkey:
             continue
-        home = scalar_at(raw.get("tnameH", ""), i)
-        away = scalar_at(raw.get("tnameA", ""), i)
-        start = scalar_at(raw.get("gameStart", ""), i)
+        home = game.get("tnameH", "")
+        away = game.get("tnameA", "")
+        start = game.get("gameStart", "")
+
         stats = get_json(f"{BASE}/match/{gmkey}/player-stat?")
-        out = f"data/{date}/{gmkey}_player-stat.json"
+        out = f"{folder}/{gmkey}_player-stat.json"
         with open(out, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
-        index.append({"gmkey": gmkey, "home": home, "away": away, "start": start, "file": out})
+
+        index.append({
+            "gmkey": gmkey,
+            "home": home,
+            "away": away,
+            "start": start,
+            "file": out,
+        })
         print(f"{gmkey}: {home} vs {away} {start}")
-    with open(f"data/{date}/index.json", "w", encoding="utf-8") as f:
+
+    with open(f"{folder}/index.json", "w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
+
+    print(f"Collected {len(index)} game(s) for {date}")
 
 if __name__ == "__main__":
     main()
