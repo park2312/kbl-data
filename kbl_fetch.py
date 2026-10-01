@@ -76,12 +76,18 @@ def main():
         with open(out, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
 
+        text_cast = get_json(f"{BASE}/match/{gmkey}/text-cast?")
+        text_cast_out = f"{folder}/{gmkey}_text-cast.json"
+        with open(text_cast_out, "w", encoding="utf-8") as f:
+            json.dump(text_cast, f, ensure_ascii=False, indent=2)
+
         index.append({
             "gmkey": gmkey,
             "home": home,
             "away": away,
             "start": start,
-            "file": out,
+            "player_stat_file": out,
+            "text_cast_file": text_cast_out,
         })
         print(f"{gmkey}: {home} vs {away} {start}")
 
