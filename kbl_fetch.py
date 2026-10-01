@@ -76,10 +76,20 @@ def main():
         with open(out, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
 
-        text_cast = get_json(f"{BASE}/match/{gmkey}/text-cast?")
+        # Collect full play-by-play, quarter by quarter.
+        text_cast_all = []
+        text_cast_files = {}
+        for quarter in ("Q1", "Q2", "Q3", "Q4"):
+            text_cast = get_json(f"{BASE}/match/{gmkey}/text-cast?quarterList={quarter}")
+            quarter_out = f"{folder}/{gmkey}_text-cast_{quarter}.json"
+            with open(quarter_out, "w", encoding="utf-8") as f:
+                json.dump(text_cast, f, ensure_ascii=False, indent=2)
+            text_cast_files[quarter] = quarter_out
+            text_cast_all.extend(text_cast)
+
         text_cast_out = f"{folder}/{gmkey}_text-cast.json"
         with open(text_cast_out, "w", encoding="utf-8") as f:
-            json.dump(text_cast, f, ensure_ascii=False, indent=2)
+            json.dump(text_cast_all, f, ensure_ascii=False, indent=2)
 
         index.append({
             "gmkey": gmkey,
@@ -88,6 +98,7 @@ def main():
             "start": start,
             "player_stat_file": out,
             "text_cast_file": text_cast_out,
+            "text_cast_quarter_files": text_cast_files,
         })
         print(f"{gmkey}: {home} vs {away} {start}")
 
