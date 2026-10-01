@@ -5,7 +5,13 @@
     "away": "안양 정관장",
     "start": "1400",
     "player_stat_file": "data/20260927/S49G14N8_player-stat.json",
-    "text_cast_file": "data/20260927/S49G14N8_text-cast.json"
+    "text_cast_file": "data/20260927/S49G14N8_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20260927/S49G14N8_text-cast_Q1.json",
+      "Q2": "data/20260927/S49G14N8_text-cast_Q2.json",
+      "Q3": "data/20260927/S49G14N8_text-cast_Q3.json",
+      "Q4": "data/20260927/S49G14N8_text-cast_Q4.json"
+    }
   },
   {
     "gmkey": "S49G14N9",
@@ -13,7 +19,13 @@
     "away": "고양 소노",
     "start": "1400",
     "player_stat_file": "data/20260927/S49G14N9_player-stat.json",
-    "text_cast_file": "data/20260927/S49G14N9_text-cast.json"
+    "text_cast_file": "data/20260927/S49G14N9_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20260927/S49G14N9_text-cast_Q1.json",
+      "Q2": "data/20260927/S49G14N9_text-cast_Q2.json",
+      "Q3": "data/20260927/S49G14N9_text-cast_Q3.json",
+      "Q4": "data/20260927/S49G14N9_text-cast_Q4.json"
+    }
   },
   {
     "gmkey": "S49G14N10",
@@ -21,6 +33,12 @@
     "away": "대구 한국가스공사",
     "start": "1630",
     "player_stat_file": "data/20260927/S49G14N10_player-stat.json",
-    "text_cast_file": "data/20260927/S49G14N10_text-cast.json"
+    "text_cast_file": "data/20260927/S49G14N10_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20260927/S49G14N10_text-cast_Q1.json",
+      "Q2": "data/20260927/S49G14N10_text-cast_Q2.json",
+      "Q3": "data/20260927/S49G14N10_text-cast_Q3.json",
+      "Q4": "data/20260927/S49G14N10_text-cast_Q4.json"
+    }
   }
 ]
