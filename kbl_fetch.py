@@ -108,6 +108,12 @@ def main():
         with open(out, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
 
+        # Match chart includes shot locations (shootLog), leadTrack, scoreChart, bestPlayer, etc.
+        match_chart = get_json(f"{BASE}/match/{gmkey}/match-chart?")
+        match_chart_out = f"{folder}/{gmkey}_match-chart.json"
+        with open(match_chart_out, "w", encoding="utf-8") as f:
+            json.dump(match_chart, f, ensure_ascii=False, indent=2)
+
         # Collect full play-by-play, quarter by quarter.
         text_cast_all = []
         text_cast_files = {}
@@ -138,6 +144,7 @@ def main():
             "away": away,
             "start": start,
             "player_stat_file": out,
+            "match_chart_file": match_chart_out,
             "text_cast_file": text_cast_out,
             "text_cast_quarter_files": text_cast_files,
             "unknown_events_file": unknown_out,
