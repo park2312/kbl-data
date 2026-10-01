@@ -16,6 +16,38 @@ HEADERS = {
     "user-agent": "Mozilla/5.0",
 }
 
+EVENT_NAMES = {
+    "001": "게임시작",
+    "003": "작전시간",
+    "009": "게임종료",
+    "101": "교체(IN)",
+    "102": "교체(OUT)",
+    "201": "2점슛성공",
+    "202": "2점슛시도",
+    "203": "자유투성공",
+    "204": "자유투시도",
+    "205": "3점슛성공",
+    "206": "3점슛시도",
+    "207": "덩크슛성공",
+    "209": "공격리바운드",
+    "210": "수비리바운드",
+    "211": "어시스트",
+    "212": "스틸",
+    "213": "블록",
+    "214": "턴오버",
+    "215": "파울자유투",
+    "216": "파울",
+    "217": "팀속공",
+    "218": "팀리바운드",
+    "221": "굿디펜스",
+    "223": "팀턴오버",
+    "224": "기타파울",
+    "225": "팀파울",
+    "226": "스크린 어시스트",
+    "227": "디플렉션",
+    "229": "코치챌린지",
+}
+
 def get_json(url):
     req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=30) as res:
@@ -85,7 +117,16 @@ def main():
             with open(quarter_out, "w", encoding="utf-8") as f:
                 json.dump(text_cast, f, ensure_ascii=False, indent=2)
             text_cast_files[quarter] = quarter_out
+            for event in text_cast:
+                code = str(event.get("a", ""))
+                event["event"] = EVENT_NAMES.get(code, "UNKNOWN")
             text_cast_all.extend(text_cast)
+
+        # Keep a compact report of any event codes we have not decoded yet.
+        unknown_events = [event for event in text_cast_all if event.get("event") == "UNKNOWN"]
+        unknown_out = f"{folder}/{gmkey}_unknown-events.json"
+        with open(unknown_out, "w", encoding="utf-8") as f:
+            json.dump(unknown_events, f, ensure_ascii=False, indent=2)
 
         text_cast_out = f"{folder}/{gmkey}_text-cast.json"
         with open(text_cast_out, "w", encoding="utf-8") as f:
@@ -99,6 +140,8 @@ def main():
             "player_stat_file": out,
             "text_cast_file": text_cast_out,
             "text_cast_quarter_files": text_cast_files,
+            "unknown_events_file": unknown_out,
+            "unknown_event_count": len(unknown_events),
         })
         print(f"{gmkey}: {home} vs {away} {start}")
 
