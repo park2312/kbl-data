@@ -114,6 +114,29 @@ def main():
         with open(match_chart_out, "w", encoding="utf-8") as f:
             json.dump(match_chart, f, ensure_ascii=False, indent=2)
 
+        # Flatten the official shootLog into one row per field-goal attempt.
+        # d is retained raw; observed KBL charts use it to distinguish court/attack direction.
+        shot_log = []
+        for player in match_chart.get("shootLog", []):
+            for shot_no, shot in enumerate(player.get("logs", []), start=1):
+                shot_log.append({
+                    "pcode": player.get("pcode"),
+                    "pname": player.get("pname"),
+                    "ename": player.get("ename"),
+                    "tcode": player.get("tcode"),
+                    "shot_no": shot_no,
+                    "q": shot.get("q"),
+                    "x": shot.get("x"),
+                    "y": shot.get("y"),
+                    "result": shot.get("o"),
+                    "made": shot.get("o") == "O",
+                    "direction": shot.get("d"),
+                })
+
+        shot_log_out = f"{folder}/{gmkey}_shot-log.json"
+        with open(shot_log_out, "w", encoding="utf-8") as f:
+            json.dump(shot_log, f, ensure_ascii=False, indent=2)
+
         # Collect full play-by-play, quarter by quarter.
         text_cast_all = []
         text_cast_files = {}
@@ -145,6 +168,8 @@ def main():
             "start": start,
             "player_stat_file": out,
             "match_chart_file": match_chart_out,
+            "shot_log_file": shot_log_out,
+            "shot_attempt_count": len(shot_log),
             "text_cast_file": text_cast_out,
             "text_cast_quarter_files": text_cast_files,
             "unknown_events_file": unknown_out,
