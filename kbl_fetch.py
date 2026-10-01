@@ -37,7 +37,7 @@ EVENT_NAMES = {
     "214": "턴오버",
     "215": "파울자유투",
     "216": "파울",
-    "217": "UNKNOWN",
+    "217": "팀속공",
     "218": "팀리바운드",
     "221": "굿디펜스",
     "223": "팀턴오버",
@@ -45,7 +45,7 @@ EVENT_NAMES = {
     "225": "팀파울",
     "226": "스크린 어시스트",
     "227": "디플렉션",
-    "228": "UNKNOWN",
+    "228": "비디오판독",
     "229": "코치챌린지",
 }
 
@@ -138,7 +138,7 @@ def main():
         with open(shot_log_out, "w", encoding="utf-8") as f:
             json.dump(shot_log, f, ensure_ascii=False, indent=2)
 
-        # Collect full play-by-play, quarter by quarter.
+        # Collect full play-by-play, quarter by quarter.\n        # IMPORTANT: KBL text-cast m/s is already the displayed quarter clock (10:00 -> 0:00). Do not invert it.
         text_cast_all = []
         text_cast_files = {}
         for quarter in ("Q1", "Q2", "Q3", "Q4"):
