@@ -3,13 +3,36 @@ name: KBL Fetch
 on:
   workflow_dispatch:
     inputs:
-      date:
-        description: "KBL game date (YYYYMMDD)"
+      mode:
+        description: "single = one date, backfill = every date in range"
         required: true
-        default: "20260927"
+        default: "single"
+        type: choice
+        options:
+          - single
+          - backfill
+      date:
+        description: "Single date (YYYYMMDD). Blank = yesterday KST"
+        required: false
+        default: ""
+      from_date:
+        description: "Backfill start (YYYYMMDD)"
+        required: false
+        default: "20260920"
+      to_date:
+        description: "Backfill end (YYYYMMDD). Blank = today KST"
+        required: false
+        default: ""
+  schedule:
+    # 00:30 KST every day. Fetches the previous KST date after games have finished.
+    - cron: "30 15 * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: kbl-data-fetch
+  cancel-in-progress: false
 
 jobs:
   fetch:
@@ -17,12 +40,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch official KBL data
-        env:
-          KBL_DATE: ${{ inputs.date }}
-        run: python3 kbl_fetch.py
+      - name: Resolve dates and fetch all KBL games
+        shell: bash
+        run: |
+          set -euo pipefail
+          export TZ=Asia/Seoul
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            START_DATE=$(date -d "yesterday" +%Y%m%d)
+            END_DATE="$START_DATE"
+          elif [ "${{ inputs.mode }}" = "backfill" ]; then
+            START_DATE="${{ inputs.from_date }}"
+            END_DATE="${{ inputs.to_date }}"
+            if [ -z "$END_DATE" ]; then
+              END_DATE=$(date +%Y%m%d)
+            fi
+          else
+            START_DATE="${{ inputs.date }}"
+            if [ -z "$START_DATE" ]; then
+              START_DATE=$(date -d "yesterday" +%Y%m%d)
+            fi
+            END_DATE="$START_DATE"
+          fi
+
+          echo "Collecting KBL dates: $START_DATE -> $END_DATE"
+
+          current="$START_DATE"
+          while [ "$current" -le "$END_DATE" ]; do
+            echo "=== $current ==="
+            KBL_DATE="$current" python3 kbl_fetch.py
+            current=$(date -d "$current + 1 day" +%Y%m%d)
+          done
 
       - name: Commit collected data
+        shell: bash
         run: |
           git config user.name "kbl-data-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -30,6 +81,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Fetch KBL data ${{ inputs.date }}"
+            git commit -m "Update KBL official game data"
             git push
           fi
