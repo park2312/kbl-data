@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "tcode": "10",
+    "pname": "다리우스 베즐리",
+    "q": "Q2",
+    "pbp_attempts": 3,
+    "chart_attempts": 4
+  }
+]
