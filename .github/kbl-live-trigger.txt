@@ -1,1 +1,1 @@
-trigger 20261003 halftime
+trigger 20261003 final 1848KST
