@@ -1,0 +1,42 @@
+name: KBL Live Fetch
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/kbl-live-trigger.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kbl-live-fetch
+  cancel-in-progress: true
+
+jobs:
+  fetch-live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch today's KBL data
+        shell: bash
+        run: |
+          set -euo pipefail
+          export TZ=Asia/Seoul
+          TODAY=$(date +%Y%m%d)
+          echo "Live fetch KBL date: $TODAY"
+          KBL_DATE="$TODAY" python3 kbl_fetch.py
+
+      - name: Commit live data
+        shell: bash
+        run: |
+          git config user.name "kbl-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update live KBL data"
+            git push
+          fi
