@@ -1,1 +1,1 @@
-trigger 20261005 collect 20261004 DB-SONO review
+20261004
