@@ -29,6 +29,7 @@ EVENT_NAMES = {
     "205": "3점슛성공",
     "206": "3점슛시도",
     "207": "덩크슛성공",
+    "208": "덩크슛시도",
     "209": "공격리바운드",
     "210": "수비리바운드",
     "211": "어시스트",
@@ -267,7 +268,7 @@ def main():
         # KBL shootLog does not include game clock, so the safest deterministic key
         # is player + quarter + chronological attempt order. Validate counts and
         # never silently force a match when the two official feeds disagree.
-        fg_codes = {"201", "202", "205", "206", "207"}
+        fg_codes = {"201", "202", "205", "206", "207", "208"}
         pbp_shots = {}
         for event in text_cast_all:
             code = str(event.get("a", ""))
