@@ -1,1 +1,1 @@
-trigger 20261004 final DB-SONO review 1791104186765
+trigger 20261005 collect 20261004 DB-SONO review
