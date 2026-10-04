@@ -1,0 +1,56 @@
+[
+  {
+    "gmkey": "S49G01N4",
+    "home": "원주 DB",
+    "away": "고양 소노",
+    "start": "1400",
+    "player_stat_file": "data/20261004/S49G01N4_player-stat.json",
+    "match_chart_file": "data/20261004/S49G01N4_match-chart.json",
+    "shot_log_file": "data/20261004/S49G01N4_shot-log.json",
+    "shot_attempt_count": 147,
+    "merged_shots_file": "data/20261004/S49G01N4_shots-merged.json",
+    "merged_shot_count": 147,
+    "shot_merge_issues_file": "data/20261004/S49G01N4_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261004/S49G01N4_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261004/S49G01N4_text-cast_Q1.json",
+      "Q2": "data/20261004/S49G01N4_text-cast_Q2.json",
+      "Q3": "data/20261004/S49G01N4_text-cast_Q3.json",
+      "Q4": "data/20261004/S49G01N4_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261004/S49G01N4_lineup-stints.json",
+    "lineup_stint_count": 25,
+    "lineup_issues_file": "data/20261004/S49G01N4_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261004/S49G01N4_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S49G01N5",
+    "home": "수원 KT",
+    "away": "서울 삼성",
+    "start": "1630",
+    "player_stat_file": "data/20261004/S49G01N5_player-stat.json",
+    "match_chart_file": "data/20261004/S49G01N5_match-chart.json",
+    "shot_log_file": "data/20261004/S49G01N5_shot-log.json",
+    "shot_attempt_count": 141,
+    "merged_shots_file": "data/20261004/S49G01N5_shots-merged.json",
+    "merged_shot_count": 141,
+    "shot_merge_issues_file": "data/20261004/S49G01N5_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261004/S49G01N5_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261004/S49G01N5_text-cast_Q1.json",
+      "Q2": "data/20261004/S49G01N5_text-cast_Q2.json",
+      "Q3": "data/20261004/S49G01N5_text-cast_Q3.json",
+      "Q4": "data/20261004/S49G01N5_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261004/S49G01N5_lineup-stints.json",
+    "lineup_stint_count": 24,
+    "lineup_issues_file": "data/20261004/S49G01N5_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261004/S49G01N5_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
