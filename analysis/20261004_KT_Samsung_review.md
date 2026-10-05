@@ -116,3 +116,14 @@ KT:
 - Track Jeon Sung-hyun's shot quality/form rather than assuming shooting reputation guarantees spacing value.
 - 22 OREB is a major strength, but second-chance conversion must be tracked.
 - Guard control and late turnovers remain high-priority variables until Kim Sun-hyung returns/rotation stabilizes.
+
+## Direct-viewer note — Jeon Sung-hyun shot quality
+User observation after watching the game:
+- Jeon Sung-hyun's misses did not feel like forced/tough-shot attempts; the shot timing generally looked appropriate.
+- His only made three was remembered as an unusually deep three.
+- Because this was the first regular-season game, do not downgrade his shooting ability or KT spacing from one 1/9 game. Track shot quality and conversion over the next several games before changing the prior.
+
+Model handling:
+- Classify the 1/9 as a negative single-game result, not yet a structural shooting problem.
+- Do not credit Samsung's defense with forcing difficult Jeon attempts without video evidence.
+- Next KT previews should preserve Jeon's shooting gravity while separately monitoring whether normal/open attempts begin converting.
