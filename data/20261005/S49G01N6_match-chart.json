@@ -98,6 +98,13 @@
           "y": 251,
           "o": "O",
           "d": "1"
+        },
+        {
+          "q": "Q3",
+          "x": 72,
+          "y": 221,
+          "o": "X",
+          "d": "2"
         }
       ]
     },
@@ -177,6 +184,13 @@
           "y": 176,
           "o": "O",
           "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 566,
+          "y": 156,
+          "o": "O",
+          "d": "1"
         }
       ]
     },
@@ -362,6 +376,13 @@
           "y": 37,
           "o": "X",
           "d": "1"
+        },
+        {
+          "q": "Q3",
+          "x": 116,
+          "y": 246,
+          "o": "O",
+          "d": "2"
         }
       ]
     },
@@ -377,6 +398,13 @@
           "y": 46,
           "o": "O",
           "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 662,
+          "y": 39,
+          "o": "O",
+          "d": "1"
         }
       ]
     },
@@ -427,6 +455,27 @@
           "y": 189,
           "o": "O",
           "d": "1"
+        },
+        {
+          "q": "Q3",
+          "x": 70,
+          "y": 216,
+          "o": "O",
+          "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 82,
+          "y": 208,
+          "o": "O",
+          "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 72,
+          "y": 221,
+          "o": "O",
+          "d": "2"
         }
       ]
     },
@@ -449,6 +498,20 @@
           "y": 257,
           "o": "X",
           "d": "1"
+        },
+        {
+          "q": "Q3",
+          "x": 113,
+          "y": 252,
+          "o": "X",
+          "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 102,
+          "y": 375,
+          "o": "X",
+          "d": "2"
         }
       ]
     },
@@ -528,6 +591,20 @@
           "y": 214,
           "o": "O",
           "d": "2"
+        },
+        {
+          "q": "Q3",
+          "x": 545,
+          "y": 339,
+          "o": "O",
+          "d": "1"
+        },
+        {
+          "q": "Q3",
+          "x": 647,
+          "y": 191,
+          "o": "O",
+          "d": "1"
         }
       ]
     },
@@ -624,6 +701,16 @@
       -7,
       -11,
       -17
+    ],
+    "q3": [
+      -20,
+      -19,
+      -22,
+      -20,
+      -20,
+      -20,
+      -20,
+      -20
     ]
   },
   "scoreChart": {
@@ -647,6 +734,16 @@
         44,
         44,
         44
+      ],
+      "q3": [
+        46,
+        50,
+        50,
+        52,
+        52,
+        52,
+        52,
+        52
       ]
     },
     "away": {
@@ -669,6 +766,16 @@
         51,
         55,
         61
+      ],
+      "q3": [
+        66,
+        69,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72
       ]
     }
   },
@@ -678,7 +785,7 @@
       "home": {
         "pcode": "291649",
         "img": "https://kbl.or.kr/files/kbl/players-photo/291649.png",
-        "value": 5,
+        "value": 6,
         "pname": "박무빈",
         "pnameEn": "PARK MU BIN",
         "tname": "울산 현대모비스",
@@ -688,7 +795,7 @@
       "away": {
         "pcode": "291085",
         "img": "https://kbl.or.kr/files/kbl/players-photo/291085.png",
-        "value": 8,
+        "value": 10,
         "pname": "허훈",
         "pnameEn": "HEO HOON",
         "tname": "부산 KCC",
@@ -734,7 +841,7 @@
       "away": {
         "pcode": "291342",
         "img": "https://kbl.or.kr/files/kbl/players-photo/291342.png",
-        "value": 9,
+        "value": 11,
         "pname": "숀 롱",
         "pnameEn": "Shawn Long",
         "tname": "부산 KCC",
@@ -747,7 +854,7 @@
       "home": {
         "pcode": "291579",
         "img": "https://kbl.or.kr/files/kbl/players-photo/291579.png",
-        "value": 12,
+        "value": 18,
         "pname": "게이지 프림",
         "pnameEn": "Gaige Colburn Prim",
         "tname": "울산 현대모비스",
@@ -757,7 +864,7 @@
       "away": {
         "pcode": "291342",
         "img": "https://kbl.or.kr/files/kbl/players-photo/291342.png",
-        "value": 22,
+        "value": 23,
         "pname": "숀 롱",
         "pnameEn": "Shawn Long",
         "tname": "부산 KCC",
@@ -768,14 +875,14 @@
     {
       "part": "stl",
       "home": {
-        "pcode": "290787",
-        "img": "https://kbl.or.kr/files/kbl/players-photo/290787.png",
+        "pcode": "291649",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291649.png",
         "value": 1,
-        "pname": "이승현",
-        "pnameEn": "LEE SEOUNG HYUN",
+        "pname": "박무빈",
+        "pnameEn": "PARK MU BIN",
         "tname": "울산 현대모비스",
-        "playMin": 10,
-        "playSec": 0
+        "playMin": 7,
+        "playSec": 3
       },
       "away": {
         "pcode": "290539",

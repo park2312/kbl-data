@@ -143,6 +143,19 @@
     "direction": "1"
   },
   {
+    "pcode": "290787",
+    "pname": "이승현",
+    "ename": "LEE SEOUNG HYUN",
+    "tcode": "10",
+    "shot_no": 4,
+    "q": "Q3",
+    "x": 72,
+    "y": 221,
+    "result": "X",
+    "made": false,
+    "direction": "2"
+  },
+  {
     "pcode": "290788",
     "pname": "이호현",
     "ename": "LEE HO HYUN",
@@ -258,6 +271,19 @@
     "result": "O",
     "made": true,
     "direction": "2"
+  },
+  {
+    "pcode": "291085",
+    "pname": "허훈",
+    "ename": "HEO HOON",
+    "tcode": "60",
+    "shot_no": 9,
+    "q": "Q3",
+    "x": 566,
+    "y": 156,
+    "result": "O",
+    "made": true,
+    "direction": "1"
   },
   {
     "pcode": "291189",
@@ -559,6 +585,19 @@
     "direction": "1"
   },
   {
+    "pcode": "291375",
+    "pname": "이우석",
+    "ename": "LEE WOO SUK",
+    "tcode": "10",
+    "shot_no": 9,
+    "q": "Q3",
+    "x": 116,
+    "y": 246,
+    "result": "O",
+    "made": true,
+    "direction": "2"
+  },
+  {
     "pcode": "291490",
     "pname": "김동현",
     "ename": "KIM DONG HYUN",
@@ -570,6 +609,19 @@
     "result": "O",
     "made": true,
     "direction": "2"
+  },
+  {
+    "pcode": "291490",
+    "pname": "김동현",
+    "ename": "KIM DONG HYUN",
+    "tcode": "60",
+    "shot_no": 2,
+    "q": "Q3",
+    "x": 662,
+    "y": 39,
+    "result": "O",
+    "made": true,
+    "direction": "1"
   },
   {
     "pcode": "291579",
@@ -650,6 +702,45 @@
     "direction": "1"
   },
   {
+    "pcode": "291579",
+    "pname": "게이지 프림",
+    "ename": "Gaige Colburn Prim",
+    "tcode": "10",
+    "shot_no": 7,
+    "q": "Q3",
+    "x": 70,
+    "y": 216,
+    "result": "O",
+    "made": true,
+    "direction": "2"
+  },
+  {
+    "pcode": "291579",
+    "pname": "게이지 프림",
+    "ename": "Gaige Colburn Prim",
+    "tcode": "10",
+    "shot_no": 8,
+    "q": "Q3",
+    "x": 82,
+    "y": 208,
+    "result": "O",
+    "made": true,
+    "direction": "2"
+  },
+  {
+    "pcode": "291579",
+    "pname": "게이지 프림",
+    "ename": "Gaige Colburn Prim",
+    "tcode": "10",
+    "shot_no": 9,
+    "q": "Q3",
+    "x": 72,
+    "y": 221,
+    "result": "O",
+    "made": true,
+    "direction": "2"
+  },
+  {
     "pcode": "291649",
     "pname": "박무빈",
     "ename": "PARK MU BIN",
@@ -674,6 +765,32 @@
     "result": "X",
     "made": false,
     "direction": "1"
+  },
+  {
+    "pcode": "291649",
+    "pname": "박무빈",
+    "ename": "PARK MU BIN",
+    "tcode": "10",
+    "shot_no": 3,
+    "q": "Q3",
+    "x": 113,
+    "y": 252,
+    "result": "X",
+    "made": false,
+    "direction": "2"
+  },
+  {
+    "pcode": "291649",
+    "pname": "박무빈",
+    "ename": "PARK MU BIN",
+    "tcode": "10",
+    "shot_no": 4,
+    "q": "Q3",
+    "x": 102,
+    "y": 375,
+    "result": "X",
+    "made": false,
+    "direction": "2"
   },
   {
     "pcode": "291859",
@@ -791,6 +908,32 @@
     "result": "O",
     "made": true,
     "direction": "2"
+  },
+  {
+    "pcode": "291884",
+    "pname": "루이스 킹",
+    "ename": "Louis Dajon King",
+    "tcode": "60",
+    "shot_no": 9,
+    "q": "Q3",
+    "x": 545,
+    "y": 339,
+    "result": "O",
+    "made": true,
+    "direction": "1"
+  },
+  {
+    "pcode": "291884",
+    "pname": "루이스 킹",
+    "ename": "Louis Dajon King",
+    "tcode": "60",
+    "shot_no": 10,
+    "q": "Q3",
+    "x": 647,
+    "y": 191,
+    "result": "O",
+    "made": true,
+    "direction": "1"
   },
   {
     "pcode": "291886",
