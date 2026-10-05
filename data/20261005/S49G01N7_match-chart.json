@@ -5,5 +5,121 @@
     "home": {},
     "away": {}
   },
-  "bestPlayer": []
+  "bestPlayer": [
+    {
+      "part": "ast",
+      "home": {
+        "pcode": "291005",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291005.png",
+        "value": 0,
+        "pname": "최승욱",
+        "pnameEn": "CHOI SEUNG WOOK",
+        "tname": "대구 한국가스공사",
+        "playMin": 0,
+        "playSec": 0
+      },
+      "away": {
+        "pcode": "291648",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291648.png",
+        "value": 0,
+        "pname": "표승빈",
+        "pnameEn": "PYO SEONG BIN",
+        "tname": "안양 정관장",
+        "playMin": 0,
+        "playSec": 0
+      }
+    },
+    {
+      "part": "bs",
+      "home": {
+        "pcode": "291005",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291005.png",
+        "value": 0,
+        "pname": "최승욱",
+        "pnameEn": "CHOI SEUNG WOOK",
+        "tname": "대구 한국가스공사",
+        "playMin": 0,
+        "playSec": 0
+      },
+      "away": {
+        "pcode": "291648",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291648.png",
+        "value": 0,
+        "pname": "표승빈",
+        "pnameEn": "PYO SEONG BIN",
+        "tname": "안양 정관장",
+        "playMin": 0,
+        "playSec": 0
+      }
+    },
+    {
+      "part": "rb",
+      "home": {
+        "pcode": "291005",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291005.png",
+        "value": 0,
+        "pname": "최승욱",
+        "pnameEn": "CHOI SEUNG WOOK",
+        "tname": "대구 한국가스공사",
+        "playMin": 0,
+        "playSec": 0
+      },
+      "away": {
+        "pcode": "291648",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291648.png",
+        "value": 0,
+        "pname": "표승빈",
+        "pnameEn": "PYO SEONG BIN",
+        "tname": "안양 정관장",
+        "playMin": 0,
+        "playSec": 0
+      }
+    },
+    {
+      "part": "score",
+      "home": {
+        "pcode": "291005",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291005.png",
+        "value": 0,
+        "pname": "최승욱",
+        "pnameEn": "CHOI SEUNG WOOK",
+        "tname": "대구 한국가스공사",
+        "playMin": 0,
+        "playSec": 0
+      },
+      "away": {
+        "pcode": "291648",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291648.png",
+        "value": 0,
+        "pname": "표승빈",
+        "pnameEn": "PYO SEONG BIN",
+        "tname": "안양 정관장",
+        "playMin": 0,
+        "playSec": 0
+      }
+    },
+    {
+      "part": "stl",
+      "home": {
+        "pcode": "291005",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291005.png",
+        "value": 0,
+        "pname": "최승욱",
+        "pnameEn": "CHOI SEUNG WOOK",
+        "tname": "대구 한국가스공사",
+        "playMin": 0,
+        "playSec": 0
+      },
+      "away": {
+        "pcode": "291648",
+        "img": "https://kbl.or.kr/files/kbl/players-photo/291648.png",
+        "value": 0,
+        "pname": "표승빈",
+        "pnameEn": "PYO SEONG BIN",
+        "tname": "안양 정관장",
+        "playMin": 0,
+        "playSec": 0
+      }
+    }
+  ]
 }
