@@ -127,3 +127,35 @@ Model handling:
 - Classify the 1/9 as a negative single-game result, not yet a structural shooting problem.
 - Do not credit Samsung's defense with forcing difficult Jeon attempts without video evidence.
 - Next KT previews should preserve Jeon's shooting gravity while separately monitoring whether normal/open attempts begin converting.
+
+## KT structural hypothesis — Bass-centric offense (updated with viewer observation and coach interview)
+Direct-viewer observation:
+- Porter did not appear able to control Kanter in the direct matchup.
+- Bass keeps producing box-score numbers, but since the open matches the offense has felt overly dependent on Bass.
+- Outside of Bass creation and kick-out threes, there appears to be too little secondary team offense; possessions can feel stagnant.
+
+Official-data context across KT's two open matches + regular-season opener (all losses):
+| Game | Result | Bass PTS/REB/AST/TO | Bass USG% | KT AST | KT 3PA |
+|---|---|---|---:|---:|---:|
+| vs JKJ (9/25) | 72-75 L | 35/12/6/7 | 46.3 | 14 | 24 |
+| vs Sono (9/27) | 96-114 L | 27/9/4/3 | 34.2 | 20 | 37 |
+| vs Samsung (10/4) | 76-81 L | 35/11/3/6 | 37.5 | 13 | 37 |
+
+Three-game Bass totals: 97 points (32.3/g), 32 rebounds (10.7/g), 13 assists vs 16 turnovers. KT went 0-3 in this sample. Bass 2P 34/53 (64.2%) but 3P 4/21 (19.0%). This supports a high-volume, high-centralization profile, but does not prove Bass individually causes losses.
+
+Coach confirmation after Samsung game:
+- Moon Kyung-eun explicitly said KT kept looking for Bass too much, described it as a habit, and said the team must escape one-player-centered offense.
+- He said the team had practiced initiating offense before the ball reached Bass and using the opposite side of mismatches, but failed to execute it in the game.
+- Therefore elevate Bass-centric offensive stagnation from viewer hypothesis to a coach-confirmed structural issue to monitor.
+
+Porter/Kanter caution:
+- Direct defensive assignment cannot be established from KBL PBP.
+- Kanter scored 12 of his 30 points during the 22:08 in which Porter was concurrently on court (2P 2/3, 3P 1/2, FT 5/8), and 18 points during Porter's 17:52 off-court time.
+- Therefore do not claim the box score proves Porter was personally destroyed by Kanter. Keep 'Porter could not control Kanter in the direct matchup' as direct-viewer observation, while the broader Q2/Q3 Samsung foreign-pair advantage is official-data supported.
+
+Next-game test:
+1. Before first Bass touch, does KT run a domestic guard/wing action?
+2. After Bass draws help, is the next action only a catch-and-shoot three, or does KT create an extra pass/closeout attack/cut/short-roll?
+3. Track Bass touches that end in his FGA/TO vs touches that produce a second-side advantage.
+4. Track team AST and domestic paint touches alongside Bass USG.
+5. Track Porter offensive involvement and direct big-man defensive matchups separately.
