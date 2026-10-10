@@ -1,0 +1,56 @@
+[
+  {
+    "gmkey": "S49G01N13",
+    "home": "부산 KCC",
+    "away": "원주 DB",
+    "start": "1400",
+    "player_stat_file": "data/20261010/S49G01N13_player-stat.json",
+    "match_chart_file": "data/20261010/S49G01N13_match-chart.json",
+    "shot_log_file": "data/20261010/S49G01N13_shot-log.json",
+    "shot_attempt_count": 153,
+    "merged_shots_file": "data/20261010/S49G01N13_shots-merged.json",
+    "merged_shot_count": 153,
+    "shot_merge_issues_file": "data/20261010/S49G01N13_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261010/S49G01N13_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261010/S49G01N13_text-cast_Q1.json",
+      "Q2": "data/20261010/S49G01N13_text-cast_Q2.json",
+      "Q3": "data/20261010/S49G01N13_text-cast_Q3.json",
+      "Q4": "data/20261010/S49G01N13_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261010/S49G01N13_lineup-stints.json",
+    "lineup_stint_count": 24,
+    "lineup_issues_file": "data/20261010/S49G01N13_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261010/S49G01N13_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S49G01N14",
+    "home": "울산 현대모비스",
+    "away": "대구 한국가스공사",
+    "start": "1630",
+    "player_stat_file": "data/20261010/S49G01N14_player-stat.json",
+    "match_chart_file": "data/20261010/S49G01N14_match-chart.json",
+    "shot_log_file": "data/20261010/S49G01N14_shot-log.json",
+    "shot_attempt_count": 142,
+    "merged_shots_file": "data/20261010/S49G01N14_shots-merged.json",
+    "merged_shot_count": 142,
+    "shot_merge_issues_file": "data/20261010/S49G01N14_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261010/S49G01N14_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261010/S49G01N14_text-cast_Q1.json",
+      "Q2": "data/20261010/S49G01N14_text-cast_Q2.json",
+      "Q3": "data/20261010/S49G01N14_text-cast_Q3.json",
+      "Q4": "data/20261010/S49G01N14_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261010/S49G01N14_lineup-stints.json",
+    "lineup_stint_count": 25,
+    "lineup_issues_file": "data/20261010/S49G01N14_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261010/S49G01N14_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
