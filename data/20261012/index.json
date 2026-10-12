@@ -1,0 +1,29 @@
+[
+  {
+    "gmkey": "S49G01N18",
+    "home": "울산 현대모비스",
+    "away": "원주 DB",
+    "start": "1900",
+    "player_stat_file": "data/20261012/S49G01N18_player-stat.json",
+    "match_chart_file": "data/20261012/S49G01N18_match-chart.json",
+    "shot_log_file": "data/20261012/S49G01N18_shot-log.json",
+    "shot_attempt_count": 154,
+    "merged_shots_file": "data/20261012/S49G01N18_shots-merged.json",
+    "merged_shot_count": 154,
+    "shot_merge_issues_file": "data/20261012/S49G01N18_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261012/S49G01N18_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261012/S49G01N18_text-cast_Q1.json",
+      "Q2": "data/20261012/S49G01N18_text-cast_Q2.json",
+      "Q3": "data/20261012/S49G01N18_text-cast_Q3.json",
+      "Q4": "data/20261012/S49G01N18_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261012/S49G01N18_lineup-stints.json",
+    "lineup_stint_count": 26,
+    "lineup_issues_file": "data/20261012/S49G01N18_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261012/S49G01N18_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
