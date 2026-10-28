@@ -1,0 +1,44 @@
+[
+  {
+    "tcode": "16",
+    "pname": "레이션 해먼즈",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 6
+  },
+  {
+    "tcode": "16",
+    "pname": "이선 알바노",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 3
+  },
+  {
+    "tcode": "16",
+    "pname": "정효근",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 1
+  },
+  {
+    "tcode": "64",
+    "pname": "샘조세프 벨란겔",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 3
+  },
+  {
+    "tcode": "64",
+    "pname": "최승욱",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 3
+  },
+  {
+    "tcode": "64",
+    "pname": "케베 알루마",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 3
+  }
+]
