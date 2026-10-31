@@ -1,0 +1,83 @@
+[
+  {
+    "gmkey": "S49G01N45",
+    "home": "부산 KCC",
+    "away": "원주 DB",
+    "start": "1400",
+    "player_stat_file": "data/20261031/S49G01N45_player-stat.json",
+    "match_chart_file": "data/20261031/S49G01N45_match-chart.json",
+    "shot_log_file": "data/20261031/S49G01N45_shot-log.json",
+    "shot_attempt_count": 137,
+    "merged_shots_file": "data/20261031/S49G01N45_shots-merged.json",
+    "merged_shot_count": 137,
+    "shot_merge_issues_file": "data/20261031/S49G01N45_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261031/S49G01N45_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261031/S49G01N45_text-cast_Q1.json",
+      "Q2": "data/20261031/S49G01N45_text-cast_Q2.json",
+      "Q3": "data/20261031/S49G01N45_text-cast_Q3.json",
+      "Q4": "data/20261031/S49G01N45_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261031/S49G01N45_lineup-stints.json",
+    "lineup_stint_count": 30,
+    "lineup_issues_file": "data/20261031/S49G01N45_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261031/S49G01N45_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S49G01N46",
+    "home": "안양 정관장",
+    "away": "수원 KT",
+    "start": "1400",
+    "player_stat_file": "data/20261031/S49G01N46_player-stat.json",
+    "match_chart_file": "data/20261031/S49G01N46_match-chart.json",
+    "shot_log_file": "data/20261031/S49G01N46_shot-log.json",
+    "shot_attempt_count": 135,
+    "merged_shots_file": "data/20261031/S49G01N46_shots-merged.json",
+    "merged_shot_count": 135,
+    "shot_merge_issues_file": "data/20261031/S49G01N46_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261031/S49G01N46_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261031/S49G01N46_text-cast_Q1.json",
+      "Q2": "data/20261031/S49G01N46_text-cast_Q2.json",
+      "Q3": "data/20261031/S49G01N46_text-cast_Q3.json",
+      "Q4": "data/20261031/S49G01N46_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261031/S49G01N46_lineup-stints.json",
+    "lineup_stint_count": 34,
+    "lineup_issues_file": "data/20261031/S49G01N46_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261031/S49G01N46_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S49G01N47",
+    "home": "대구 한국가스공사",
+    "away": "울산 현대모비스",
+    "start": "1630",
+    "player_stat_file": "data/20261031/S49G01N47_player-stat.json",
+    "match_chart_file": "data/20261031/S49G01N47_match-chart.json",
+    "shot_log_file": "data/20261031/S49G01N47_shot-log.json",
+    "shot_attempt_count": 121,
+    "merged_shots_file": "data/20261031/S49G01N47_shots-merged.json",
+    "merged_shot_count": 121,
+    "shot_merge_issues_file": "data/20261031/S49G01N47_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261031/S49G01N47_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261031/S49G01N47_text-cast_Q1.json",
+      "Q2": "data/20261031/S49G01N47_text-cast_Q2.json",
+      "Q3": "data/20261031/S49G01N47_text-cast_Q3.json",
+      "Q4": "data/20261031/S49G01N47_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261031/S49G01N47_lineup-stints.json",
+    "lineup_stint_count": 32,
+    "lineup_issues_file": "data/20261031/S49G01N47_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261031/S49G01N47_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
