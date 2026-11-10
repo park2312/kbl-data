@@ -1,0 +1,29 @@
+[
+  {
+    "gmkey": "S49G01N63",
+    "home": "울산 현대모비스",
+    "away": "고양 소노",
+    "start": "1900",
+    "player_stat_file": "data/20261110/S49G01N63_player-stat.json",
+    "match_chart_file": "data/20261110/S49G01N63_match-chart.json",
+    "shot_log_file": "data/20261110/S49G01N63_shot-log.json",
+    "shot_attempt_count": 142,
+    "merged_shots_file": "data/20261110/S49G01N63_shots-merged.json",
+    "merged_shot_count": 142,
+    "shot_merge_issues_file": "data/20261110/S49G01N63_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261110/S49G01N63_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261110/S49G01N63_text-cast_Q1.json",
+      "Q2": "data/20261110/S49G01N63_text-cast_Q2.json",
+      "Q3": "data/20261110/S49G01N63_text-cast_Q3.json",
+      "Q4": "data/20261110/S49G01N63_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261110/S49G01N63_lineup-stints.json",
+    "lineup_stint_count": 24,
+    "lineup_issues_file": "data/20261110/S49G01N63_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261110/S49G01N63_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
