@@ -1,0 +1,83 @@
+[
+  {
+    "gmkey": "S50G01N1",
+    "home": "한국가스공사",
+    "away": "현대모비스",
+    "start": "1200",
+    "player_stat_file": "data/20261125/S50G01N1_player-stat.json",
+    "match_chart_file": "data/20261125/S50G01N1_match-chart.json",
+    "shot_log_file": "data/20261125/S50G01N1_shot-log.json",
+    "shot_attempt_count": 125,
+    "merged_shots_file": "data/20261125/S50G01N1_shots-merged.json",
+    "merged_shot_count": 125,
+    "shot_merge_issues_file": "data/20261125/S50G01N1_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261125/S50G01N1_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261125/S50G01N1_text-cast_Q1.json",
+      "Q2": "data/20261125/S50G01N1_text-cast_Q2.json",
+      "Q3": "data/20261125/S50G01N1_text-cast_Q3.json",
+      "Q4": "data/20261125/S50G01N1_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261125/S50G01N1_lineup-stints.json",
+    "lineup_stint_count": 29,
+    "lineup_issues_file": "data/20261125/S50G01N1_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261125/S50G01N1_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S50G01N2",
+    "home": "KCC",
+    "away": "소노",
+    "start": "1400",
+    "player_stat_file": "data/20261125/S50G01N2_player-stat.json",
+    "match_chart_file": "data/20261125/S50G01N2_match-chart.json",
+    "shot_log_file": "data/20261125/S50G01N2_shot-log.json",
+    "shot_attempt_count": 125,
+    "merged_shots_file": "data/20261125/S50G01N2_shots-merged.json",
+    "merged_shot_count": 125,
+    "shot_merge_issues_file": "data/20261125/S50G01N2_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261125/S50G01N2_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261125/S50G01N2_text-cast_Q1.json",
+      "Q2": "data/20261125/S50G01N2_text-cast_Q2.json",
+      "Q3": "data/20261125/S50G01N2_text-cast_Q3.json",
+      "Q4": "data/20261125/S50G01N2_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261125/S50G01N2_lineup-stints.json",
+    "lineup_stint_count": 32,
+    "lineup_issues_file": "data/20261125/S50G01N2_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261125/S50G01N2_unknown-events.json",
+    "unknown_event_count": 0
+  },
+  {
+    "gmkey": "S50G01N3",
+    "home": "DB",
+    "away": "삼성",
+    "start": "1600",
+    "player_stat_file": "data/20261125/S50G01N3_player-stat.json",
+    "match_chart_file": "data/20261125/S50G01N3_match-chart.json",
+    "shot_log_file": "data/20261125/S50G01N3_shot-log.json",
+    "shot_attempt_count": 134,
+    "merged_shots_file": "data/20261125/S50G01N3_shots-merged.json",
+    "merged_shot_count": 134,
+    "shot_merge_issues_file": "data/20261125/S50G01N3_shot-merge-issues.json",
+    "shot_merge_issue_count": 0,
+    "text_cast_file": "data/20261125/S50G01N3_text-cast.json",
+    "text_cast_quarter_files": {
+      "Q1": "data/20261125/S50G01N3_text-cast_Q1.json",
+      "Q2": "data/20261125/S50G01N3_text-cast_Q2.json",
+      "Q3": "data/20261125/S50G01N3_text-cast_Q3.json",
+      "Q4": "data/20261125/S50G01N3_text-cast_Q4.json"
+    },
+    "lineup_stints_file": "data/20261125/S50G01N3_lineup-stints.json",
+    "lineup_stint_count": 33,
+    "lineup_issues_file": "data/20261125/S50G01N3_lineup-issues.json",
+    "lineup_issue_count": 0,
+    "unknown_events_file": "data/20261125/S50G01N3_unknown-events.json",
+    "unknown_event_count": 0
+  }
+]
