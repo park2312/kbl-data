@@ -1,0 +1,51 @@
+[
+  {
+    "tcode": "31",
+    "pname": "김건하",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 2
+  },
+  {
+    "tcode": "31",
+    "pname": "김두진",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 1
+  },
+  {
+    "tcode": "31",
+    "pname": "이대균",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 2
+  },
+  {
+    "tcode": "31",
+    "pname": "최강민",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 1
+  },
+  {
+    "tcode": "67",
+    "pname": "박종하",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 3
+  },
+  {
+    "tcode": "67",
+    "pname": "소준혁",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 1
+  },
+  {
+    "tcode": "67",
+    "pname": "차민석",
+    "q": "EQ1",
+    "pbp_attempts": 0,
+    "chart_attempts": 1
+  }
+]
